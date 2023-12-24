@@ -1,20 +1,21 @@
-package com.example.demo.book;
+package com.example.demo.model.order;
+
+import com.example.demo.model.book.Book;
 
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 import lombok.Data;
 
 @Data
 @Entity
-public class ImageLink {
+public class Buy {
 
     @Id
-    @GeneratedValue
     private Long id;
 
-    private String thumbnailUrl;
+    @ManyToOne
+    private Order order;
 
     @ManyToOne
     private Book book;

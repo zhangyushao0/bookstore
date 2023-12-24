@@ -1,8 +1,8 @@
-package com.example.demo.user;
+package com.example.demo.model;
 
 import java.util.List;
 
-import com.example.demo.order.Order;
+import com.example.demo.model.order.Order;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

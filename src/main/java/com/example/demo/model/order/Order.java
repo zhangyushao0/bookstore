@@ -1,10 +1,10 @@
-package com.example.demo.order;
+package com.example.demo.model.order;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
-import com.example.demo.book.Book;
-import com.example.demo.user.User;
+import com.example.demo.model.User;
+import com.example.demo.model.book.Book;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;

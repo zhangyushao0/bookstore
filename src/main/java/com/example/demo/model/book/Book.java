@@ -1,9 +1,9 @@
-package com.example.demo.book;
+package com.example.demo.model.book;
 
 import java.util.List;
 
-import com.example.demo.order.Buy;
-import com.example.demo.order.Order;
+import com.example.demo.model.order.Buy;
+import com.example.demo.model.order.Order;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
