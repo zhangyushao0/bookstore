@@ -2,6 +2,7 @@ package com.example.demo.book;
 
 import java.util.List;
 
+import com.example.demo.order.Buy;
 import com.example.demo.order.Order;
 
 import jakarta.persistence.CascadeType;
@@ -43,4 +44,7 @@ public class Book {
 
     @ManyToMany(mappedBy = "books")
     private List<Order> orders;
+
+    @OneToMany(mappedBy = "book")
+    private List<Buy> buys;
 }
