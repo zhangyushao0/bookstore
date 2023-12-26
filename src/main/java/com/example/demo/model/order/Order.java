@@ -33,11 +33,6 @@ public class Order {
 
     private LocalDateTime finishTime;
 
-    @ManyToMany(cascade = { CascadeType.ALL })
-    @JoinTable(name = "order_table_book", joinColumns = { @JoinColumn(name = "order_id") }, inverseJoinColumns = {
-            @JoinColumn(name = "book_id") })
-    private List<Book> books;
-
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;

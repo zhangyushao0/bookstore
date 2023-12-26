@@ -5,7 +5,6 @@ import java.util.List;
 import com.example.demo.model.order.Buy;
 import com.example.demo.model.order.Order;
 
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -27,24 +26,27 @@ public class Book {
 
     private String isbn;
 
-    private String publisher;
-
-    private String publishedDate;
-
     private String description;
 
-    @OneToMany(mappedBy = "book", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<ImageLink> imageLinks;
+    private String imageLink;
 
     private String category;
 
-    private Integer price;
+    private Double price;
 
     private Integer stock;
 
-    @ManyToMany(mappedBy = "books")
-    private List<Order> orders;
-
     @OneToMany(mappedBy = "book")
     private List<Buy> buys;
+
+    public Book(String title, String author, String isbn, String description, String imageLink, String category,
+            Double price) {
+        this.title = title;
+        this.author = author;
+        this.isbn = isbn;
+        this.description = description;
+        this.imageLink = imageLink;
+        this.category = category;
+        this.price = price;
+    }
 }
