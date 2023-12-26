@@ -3,12 +3,10 @@ package com.example.demo.model.book;
 import java.util.List;
 
 import com.example.demo.model.order.Buy;
-import com.example.demo.model.order.Order;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
-import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToMany;
 import lombok.Data;
 
