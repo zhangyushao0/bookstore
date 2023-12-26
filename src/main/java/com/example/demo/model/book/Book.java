@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.example.demo.model.order.Buy;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -34,7 +35,7 @@ public class Book {
 
     private Integer stock;
 
-    @OneToMany(mappedBy = "book")
+    @OneToMany(mappedBy = "book", cascade = CascadeType.ALL)
     private List<Buy> buys;
 
     public Book(String title, String author, String isbn, String description, String imageLink, String category,

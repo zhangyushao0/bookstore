@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.example.demo.model.order.Order;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -36,7 +37,7 @@ public class User {
 
     private Double balance;
 
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<Order> orders;
 
     public User(String username, String password, String name, String email, String phone, String address) {

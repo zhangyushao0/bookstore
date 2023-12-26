@@ -3,6 +3,7 @@ package com.example.demo.model.order;
 import com.example.demo.model.book.Book;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 import lombok.Data;
@@ -12,6 +13,7 @@ import lombok.Data;
 public class Buy {
 
     @Id
+    @GeneratedValue
     private Long id;
 
     @ManyToOne

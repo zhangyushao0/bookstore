@@ -1,6 +1,7 @@
 package com.example.demo.model.order;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 import com.example.demo.model.User;
@@ -23,6 +24,10 @@ import lombok.Data;
 @Entity
 @Table(name = "order_table")
 public class Order {
+
+    public Order() {
+    }
+
     @Id
     @GeneratedValue
     private Long id;
@@ -37,7 +42,11 @@ public class Order {
     @JoinColumn(name = "user_id")
     private User user;
 
-    @OneToMany(mappedBy = "order")
-    private List<Buy> buys;
+    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
+    private List<Buy> buys = new ArrayList<>();
 
+    public void addBuy(Buy buy) {
+        buys.add(buy);
+        buy.setOrder(this);
+    }
 }
